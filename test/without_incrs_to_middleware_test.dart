@@ -8,8 +8,8 @@ enum Actions { increment, decrement }
 
 void main() {
   test('Without incrs', () {
-    when(Actions.increment, (store) => i = store.state);
-    when(Actions.decrement, (store) => i = store.state);
+    when(Actions.increment, (store, action) => i = store.state);
+    when(Actions.decrement, (store, action) => i = store.state);
 
     int counterReducer(int state, dynamic action) {
       if (action == Actions.increment) {

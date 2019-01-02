@@ -14,7 +14,7 @@ void _fNextDefault<T>(Store<T> store, dynamic action, NextDispatcher next) {
 
 void Function() _prepareWhenFn<T>(Store<T> store, dynamic action) =>
     Container().containsKey(action)
-        ? () => Container().byAction(action).value(store)
+        ? () => Container().byAction(action).value(store, action)
         : () => {};
 
 /**

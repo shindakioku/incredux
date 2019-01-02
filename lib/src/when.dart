@@ -7,5 +7,5 @@ import 'container.dart';
  * [action] - Action for reducer to listen.
  * [f] - Handler for listener.
  */
-void when<T>(dynamic action, void Function(Store<T>) f) =>
+void when<T>(dynamic action, void Function(Store<T> store, dynamic action) f) =>
     Container().add(action, f);

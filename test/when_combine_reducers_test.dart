@@ -5,7 +5,7 @@ import 'redux/typed_reducers.dart';
 var count = 0;
 var clickCount = 0;
 
-increment() => when(IncrementAction, (store) {
+increment() => when(IncrementAction, (store, action) {
       // print(
       //     'Increment when handler for counter store with combine reducers and default handler. state: ${store.state}');
       expect(store.state.count, 1);
@@ -15,7 +15,7 @@ increment() => when(IncrementAction, (store) {
       clickCount = store.state.clickCount;
     });
 
-decrement() => when(DecrementAction, (store) {
+decrement() => when(DecrementAction, (store, action) {
       // print(
       //     'Decrement when handler for counter store with combine reducers and default handler. state: ${store.state}');
       expect(store.state.count, 0);

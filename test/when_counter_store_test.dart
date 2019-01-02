@@ -4,14 +4,14 @@ import 'redux/increment_store.dart';
 
 var i = 0;
 
-increment() => when(Actions.increment, (store) {
+increment() => when(Actions.increment, (store, action) {
       // print(
       //     'Increment when handler for counter store with default handler. state: ${store.state}');
       expect(store.state, 1);
       i = store.state;
     });
 
-decrement() => when(Actions.decrement, (store) {
+decrement() => when(Actions.decrement, (store, action) {
       // print(
       //     'Decrement when handler for counter store with default handler. state: ${store.state}');
       expect(store.state, 0);
